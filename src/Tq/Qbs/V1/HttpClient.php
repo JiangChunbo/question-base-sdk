@@ -29,10 +29,11 @@ class HttpClient
      * @param $form_params
      * @return ResponseInterface
      */
-    public function post($uri, $form_params)
+    public function post($uri, $form_params = [], $headers = [])
     {
         return $this->client->post($uri, [
-            'form_params' => $form_params
+            'form_params' => $form_params,
+            'headers' => $headers
         ]);
     }
 
@@ -44,7 +45,7 @@ class HttpClient
      * @param $headers
      * @return ResponseInterface
      */
-    public function get($uri, $query, $headers)
+    public function get($uri, $query = [], $headers = [])
     {
         return $this->client->get($uri, [
             'query' => $query,
