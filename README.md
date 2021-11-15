@@ -1,7 +1,7 @@
-# 题库 SDK
-## 使用准备
+## 题库 SDK
+### 使用准备
 申请注册一个 App
-## 使用入门
+### 使用入门
 - 创建一个 Service，并传递 App 相关参数
 ```php
 $service = new \Tq\Qbs\V1\Service($open_id, $open_secret, $open_key);
