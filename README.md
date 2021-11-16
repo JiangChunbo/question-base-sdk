@@ -1,6 +1,7 @@
 ## 题库 SDK
 ### 使用准备
 申请注册一个 App
+&nbsp;
 ### 使用入门
 - 创建一个 Service，并传递 App 相关参数
 ```php
@@ -27,7 +28,7 @@ $subjects = $service->fetchAllSubjects($stage);
 $grades = $service->fetchAllGrades($stage);
 $books = $service->fetchBooks($subject_id, $grade_id);
 ```
-
+&nbsp;
 ## 接口
 ### 获取 Book
 代码示例：
@@ -56,6 +57,7 @@ $books = $service->fetchBooks($subject_id, $grade_id);
 ]
 ```
 
+&nbsp;
 ### <span id="fetchDirectories1">获取 Directory1</span>
 代码示例：
 ```php
@@ -121,6 +123,7 @@ $directories = $service->fetchDirectories1($book_id);
 ]
 ```
 
+&nbsp;
 ### 获取 Directory2
 代码示例：
 ```php
@@ -128,7 +131,7 @@ $directories = $service->fetchDirectories2($subject_id, $grade_id, $term);
 ```
 返回值示例：同 [获取 Directory1](#fetchDirectories1)
 
-
+&nbsp;
 ### 获取 Question1
 代码示例：
 ```php
