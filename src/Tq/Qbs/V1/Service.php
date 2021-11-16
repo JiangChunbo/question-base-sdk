@@ -346,12 +346,15 @@ class Service
 
 
     /**
-     * @param $directory_id
-     * @param $category_id
+     * 根据 Directory 和 Category
+     * @param     $directory_id
+     * @param int $category_id
+     * @param int $page
+     * @param int $page_size
      * @return mixed
      * @throws Exception
      */
-    public function fetchQuestions1($directory_id, $category_id = 0)
+    public function fetchQuestions1($directory_id, $category_id = 0, $page = 1, $limit = 5)
     {
         $this->checkToken();
         if (($directory_id = intval($directory_id)) <= 0) {
@@ -359,7 +362,9 @@ class Service
         }
         $query = [
             'directory_id' => $directory_id,
-            'category_id' => $category_id
+            'category_id' => $category_id,
+            'page' => $page,
+            'limit' => $limit
         ];
         $headers = [
             'X-Token' => $this->token
