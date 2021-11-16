@@ -43,6 +43,18 @@ class Service
         $this->open_key = $open_key;
     }
 
+
+    /**
+     * 检查是否设置 token
+     * @throws Exception
+     */
+    public function checkToken()
+    {
+        if (!$this->token) {
+            throw new Exception("还未设置 Token");
+        }
+    }
+
     /**
      * 用户注册，重复调用会修改 username，password
      * @param $user_uuid string 同一个应用下的唯一标识
@@ -54,13 +66,13 @@ class Service
     public function register($user_uuid, $username, $password)
     {
         if (strlen($user_uuid) <= 0) {
-            throw new Exception("user uuid 不能为空");
+            throw new Exception("User UUID 不能为空");
         }
         if (strlen($username) <= 0) {
-            throw new Exception("username 不能为空");
+            throw new Exception("Username 不能为空");
         }
         if (strlen($password) <= 0) {
-            throw new Exception("password 不能为空");
+            throw new Exception("Password 不能为空");
         }
 
         $payload = Payload::encrypt([
@@ -83,14 +95,13 @@ class Service
 
 
     /**
+     * 获取用户信息，返回结果与 register 基本一致
      * @return mixed
      * @throws Exception
      */
     public function userInfo()
     {
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
-        }
+        $this->checkToken();
         $headers = [
             'X-Token' => $this->token
         ];
@@ -114,10 +125,10 @@ class Service
     public function getToken($user_uuid, $password)
     {
         if (strlen($user_uuid) <= 0) {
-            throw new Exception("user uuid 不能为空");
+            throw new Exception("User UUID 不能为空");
         }
         if (strlen($password) <= 0) {
-            throw new Exception("password 不能为空");
+            throw new Exception("Password 不能为空");
         }
         $payload = Payload::encrypt([
             'user_uuid' => $user_uuid,
@@ -152,9 +163,7 @@ class Service
      */
     public function fetchAllStages()
     {
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
-        }
+        $this->checkToken();
         $headers = [
             'X-Token' => $this->token
         ];
@@ -176,14 +185,12 @@ class Service
      */
     public function fetchAllGrades($stage_id = 0)
     {
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
-        }
-        $headers = [
-            'X-Token' => $this->token
-        ];
+        $this->checkToken();
         $query = [
             'stage_id' => $stage_id
+        ];
+        $headers = [
+            'X-Token' => $this->token
         ];
         $response = $this->http_client->get('grade/list/', $query, $headers);
         $code = $response->getStatusCode();
@@ -201,9 +208,7 @@ class Service
      */
     public function fetchAllEditions()
     {
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
-        }
+        $this->checkToken();
         $headers = [
             'X-Token' => $this->token
         ];
@@ -225,9 +230,7 @@ class Service
      */
     public function fetchAllSubjects($stage_id = 0)
     {
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
-        }
+        $this->checkToken();
         $headers = [
             'X-Token' => $this->token
         ];
@@ -253,14 +256,12 @@ class Service
      */
     public function fetchBooks($subject_id, $grade_id)
     {
+        $this->checkToken();
         if (($subject_id = intval($subject_id)) <= 0) {
             throw new Exception("Subject ID 必须大于 0");
         }
         if (($grade_id = intval($grade_id)) <= 0) {
             throw new Exception("Grade ID 必须大于 0");
-        }
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
         }
         $headers = [
             'X-Token' => $this->token
@@ -286,11 +287,9 @@ class Service
      */
     public function fetchDirectories1($book_id)
     {
+        $this->checkToken();
         if (($book_id = intval($book_id)) <= 0) {
             throw new Exception("Book ID 必须大于 0");
-        }
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
         }
         $query = [
             'book_id' => $book_id
@@ -317,6 +316,7 @@ class Service
      */
     public function fetchDirectories2($subject_id, $grade_id, $term)
     {
+        $this->checkToken();
         if (($subject_id = intval($subject_id)) <= 0) {
             throw new Exception("Subject ID 必须大于 0");
         }
@@ -325,9 +325,6 @@ class Service
         }
         if (!in_array(($term = intval($term)), [0, 1, 2])) {
             throw new Exception("Term 可选值 0, 1, 2");
-        }
-        if (!$this->token) {
-            throw new Exception("还未设置 Token");
         }
         $query = [
             'open_id' => $this->open_id,
@@ -354,8 +351,9 @@ class Service
      * @return mixed
      * @throws Exception
      */
-    public function fetchQuestions1($directory_id, $category_id)
+    public function fetchQuestions1($directory_id, $category_id = 0)
     {
+        $this->checkToken();
         if (($directory_id = intval($directory_id)) <= 0) {
             throw new Exception("Subject ID 必须大于 0");
         }
