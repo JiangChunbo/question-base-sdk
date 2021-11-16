@@ -347,14 +347,13 @@ class Service
 
     /**
      * 根据 Directory 和 Category
-     * @param     $directory_id
-     * @param int $category_id
-     * @param int $page
-     * @param int $page_size
+     * @param int                  $directory_id
+     * @param int                  $category_id 题型，选填
+     * @param QuestionQueryOptions $questionQueryOptions
      * @return mixed
      * @throws Exception
      */
-    public function fetchQuestions1($directory_id, $category_id = 0, $page = 1, $limit = 5)
+    public function fetchQuestions1($directory_id, $category_id, $questionQueryOptions)
     {
         $this->checkToken();
         if (($directory_id = intval($directory_id)) <= 0) {
@@ -363,9 +362,15 @@ class Service
         $query = [
             'directory_id' => $directory_id,
             'category_id' => $category_id,
-            'page' => $page,
-            'limit' => $limit
+            'page' => $questionQueryOptions->getPage(),
+            'limit' => $questionQueryOptions->getPageSize()
         ];
+        $query['fetch_options'] = $questionQueryOptions->getFetchOptions();
+        $query['fetch_answers'] = $questionQueryOptions->getFetchAnswers();
+        $query['fetch_method'] = $questionQueryOptions->getFetchMethod();
+        $query['fetch_analyse'] = $questionQueryOptions->getFetchAnalyse();
+        $query['fetch_discuss'] = $questionQueryOptions->getFetchDiscuss();
+        $query['fetch_category'] = $questionQueryOptions->getFetchCategory();
         $headers = [
             'X-Token' => $this->token
         ];
