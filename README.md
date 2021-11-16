@@ -65,62 +65,60 @@ $directories = $service->fetchDirectories1($book_id);
 ```
 返回值示例：
 ```json
-[
-  {
-    "id": 878,
-    "sid": 0,
-    "title": "第一单元",
-    "children": [
-      {
-        "id": 879,
-        "sid": 878,
-        "title": "1 春\/朱自清"
-      },
-      {
-        "id": 880,
-        "sid": 878,
-        "title": "2 济南的冬天\/老舍"
-      },
-      {
-        "id": 881,
-        "sid": 878,
-        "title": "3* 雨的四季\/刘湛秋"
-      },
-      {
-        "id": 882,
-        "sid": 878,
-        "title": "4 古代诗歌四首",
-        "children": [
-          {
-            "id": 883,
-            "sid": 882,
-            "title": "观沧海\/曹操"
-          },
-          {
-            "id": 884,
-            "sid": 882,
-            "title": "闻王昌龄左迁龙标遥有此寄\/李白"
-          },
-          {
-            "id": 885,
-            "sid": 882,
-            "title": "次北固山下\/王湾"
-          },
-          {
-            "id": 886,
-            "sid": 882,
-            "title": "天净沙·秋思\/马致远"
-          }
-        ]
-      },
-      {
-        "id": 887,
-        "sid": 878,
-        "title": "写作 热爱生活，热爱写作"
-      }
-    ]
-  }
-]
+{
+  "state": 0,
+  "message": "ok",
+  "directories": [
+    {
+      "id": 3845,
+      "sid": 0,
+      "title": "Unit 1 Hello!",
+      "weight": 990
+    },
+    {
+      "id": 5485,
+      "sid": 0,
+      "title": "Unit 2 I'm Liu Tao ",
+      "weight": 980
+    },
+    {
+      "id": 3847,
+      "sid": 0,
+      "title": "Unit 3 My friends",
+      "weight": 970
+    },
+    {
+      "id": 3848,
+      "sid": 0,
+      "title": "Unit 4 My family",
+      "weight": 960
+    },
+    {
+      "id": 3849,
+      "sid": 0,
+      "title": "Unit 5 Look at me!",
+      "weight": 950
+    },
+    {
+      "id": 3850,
+      "sid": 0,
+      "title": "Unit 6 Colours",
+      "weight": 940
+    },
+    {
+      "id": 3851,
+      "sid": 0,
+      "title": "Unit 7 Would you like a pie?",
+      "weight": 930
+    },
+    {
+      "id": 3852,
+      "sid": 0,
+      "title": "Unit 8 Happy New Year!",
+      "weight": 920
+    }
+  ]
+}
 ```
 
 &nbsp;
