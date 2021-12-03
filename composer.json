@@ -5,6 +5,12 @@
     "php": ">=7.1",
     "guzzlehttp/guzzle": "^6.3||^7.0"
   },
+  "authors": [
+    {
+      "name": "JiangChunbo",
+      "email": "945086245@qq.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Tq\\": "./src/Tq"
