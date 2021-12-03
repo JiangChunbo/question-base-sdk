@@ -1,6 +1,7 @@
 {
   "name": "tqxxkj/qbs",
   "description": "A Question Base SDK For TQ",
+  "version": "1.0.0",
   "require": {
     "php": ">=7.1",
     "guzzlehttp/guzzle": "^6.3||^7.0"
