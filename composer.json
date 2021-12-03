@@ -1,5 +1,5 @@
 {
-  "name": "vender-name/qbs",
+  "name": "tqxxkj/qbs",
   "description": "A Question Base SDK For TQ",
   "require": {
     "php": ">=7.1",
