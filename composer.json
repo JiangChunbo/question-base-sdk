@@ -12,7 +12,7 @@
       "email": "945086245@qq.com"
     }
   ],
-  "license": "Teng Quan Technology",
+  "license": "proprietary",
   "autoload": {
     "psr-4": {
       "Tq\\": "./src/Tq"
