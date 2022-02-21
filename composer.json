@@ -1,6 +1,7 @@
 {
   "name": "tqxxkj/qbs",
   "description": "A Question Base SDK For TQ",
+  "license": "MIT",
   "require": {
     "php": ">=5.3.0",
     "guzzlehttp/guzzle": "^6.3||^7.0"
