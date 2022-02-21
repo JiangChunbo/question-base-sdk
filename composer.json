@@ -2,7 +2,7 @@
   "name": "vender-name/qbs",
   "description": "A Question Base SDK For TQ",
   "require": {
-    "php": ">=7.1",
+    "php": ">=5.3.0",
     "guzzlehttp/guzzle": "^6.3||^7.0"
   },
   "autoload": {
