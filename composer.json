@@ -1,11 +1,8 @@
 {
   "name": "tqxxkj/qbs",
   "description": "A Question Base SDK For TQ",
-<<<<<<< HEAD
   "license": "MIT",
-=======
   "version": "1.0.0",
->>>>>>> 9af1a829a8addbfa6d8cb0eaa271d3f87c7eb719
   "require": {
     "php": ">=5.3.0",
     "guzzlehttp/guzzle": "^6.3||^7.0"
@@ -16,7 +13,6 @@
       "email": "945086245@qq.com"
     }
   ],
-  "license": "proprietary",
   "autoload": {
     "psr-4": {
       "Tq\\": "./src/Tq"
