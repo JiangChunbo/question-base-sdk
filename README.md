@@ -189,7 +189,7 @@ $question = $service->fetchQuestions1(5665, 1, $options);
   },
   {
     "id": 323,
-    "content": "<img alt=\"菁优网\" src=\"http:\/\/img.jyeoo.net\/quiz\/images\/202109\/84\/5a06e11f.png\" style=\"vertical-align:middle;FLOAT:right\" \/>刘徽是中国三国时期杰出的数学大师，他的一生是为数学刻苦探究的一生，在数学理论上的贡献与成就十分突出，被称为“中国数学史上的牛顿”，他在一本著作中编选了“海岛上高、深、广、远”等九个测量问题，这本著作是（　　）",
+    "content": "刘徽是中国三国时期杰出的数学大师，他的一生是为数学刻苦探究的一生，在数学理论上的贡献与成就十分突出，被称为“中国数学史上的牛顿”，他在一本著作中编选了“海岛上高、深、广、远”等九个测量问题，这本著作是（　　）",
     "options": [
       "《九章算术》",
       "《周髀算经》",
@@ -212,10 +212,10 @@ $question = $service->fetchQuestions1(5665, 1, $options);
     "id": 324,
     "content": "在“算经十书”中，《九章算术》是中国古代记载最全面完整的一部著作，它的出现标志中国古代数学形成了完整的体系，而《海岛算经》则是中国最早的一部测量数学专著，使“中国在数学测量学的成就，超越西方约一千年”，这两本著作是下列哪位数学家留给后世的宝贵数学遗产（　　）",
     "options": [
-      "<img alt=\"菁优网\" src=\"http:\/\/img.jyeoo.net\/quiz\/images\/202109\/91\/f2a3dfe6.png\" style=\"vertical-align:middle\" \/><br \/>杨辉",
-      "<img alt=\"菁优网\" src=\"http:\/\/img.jyeoo.net\/quiz\/images\/202109\/91\/104953d5.png\" style=\"vertical-align:middle\" \/><br \/>祖冲之",
-      "<img alt=\"菁优网\" src=\"http:\/\/img.jyeoo.net\/quiz\/images\/202109\/91\/5d6e4141.png\" style=\"vertical-align:middle\" \/><br \/>秦九韶",
-      "<img alt=\"菁优网\" src=\"http:\/\/img.jyeoo.net\/quiz\/images\/202109\/91\/2ac1551c.png\" style=\"vertical-align:middle\" \/><br \/>刘徽"
+      "A",
+      "B",
+      "C",
+      "D"
     ],
     "answers": [
       "3"
@@ -231,7 +231,7 @@ $question = $service->fetchQuestions1(5665, 1, $options);
   },
   {
     "id": 325,
-    "content": "<img alt=\"菁优网\" src=\"http:\/\/img.jyeoo.net\/quiz\/images\/202108\/274\/faa6a735.png\" style=\"vertical-align:middle;FLOAT:right\" \/>《几何原本》是欧几里得的一部不朽之作．本书以公理和原始概念为基础．推演出更多的结论，这种做法为人们提供了一种研究问题的方法．这种方法所体现的数学思想是（　　）",
+    "content": "《几何原本》是欧几里得的一部不朽之作．本书以公理和原始概念为基础．推演出更多的结论，这种做法为人们提供了一种研究问题的方法．这种方法所体现的数学思想是（　　）",
     "options": [
       "数形结合思思",
       "分类讨论思想",
